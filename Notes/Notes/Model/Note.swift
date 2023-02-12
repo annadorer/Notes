@@ -7,13 +7,17 @@
 
 import Foundation
 
-struct Note {
+struct Note: Codable {
     var text: String = ""
     var noteID: Int
-    var data: NSData
+    //var data: NSData
     init(text: String, noteID: Int) {
         self.text = text
         self.noteID = noteID
-        self.data = NSData()
+        //self.data = NSData()
     }
+}
+
+struct NoteArray: Codable {
+    var notes: [Note] = Array()
 }

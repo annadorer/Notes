@@ -7,7 +7,21 @@
 
 import UIKit
 
-var text: [Note] = [Note(text: "Купить цветы", noteID: 1), Note(text: "Не забыть сделать задание", noteID: 2)]
+var text: [Note] {
+    set {
+        if let encoded = try? JSONEncoder().encode(newValue) {
+            UserDefaults.standard.set(encoded, forKey: "DataKey")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    get {
+        if let array = UserDefaults.standard.data(forKey: "DataKey") {
+            return try! JSONDecoder().decode([Note].self, from: array)
+        } else {
+            return []
+        }
+    }
+}
 var counterID: Int = 3
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -32,11 +46,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-    
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -64,7 +76,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func removeNote(at index: Int) {
         text.remove(at: index)
     }
-    
-    
 }
 
