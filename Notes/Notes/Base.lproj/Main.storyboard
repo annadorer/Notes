@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.95503038169999999" green="0.85043603180000005" blue="0.61049604420000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" name="AccentColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIndentifier" textLabel="bcf-i6-54Y" style="IBUITableViewCellStyleDefault" id="y2B-if-Ha3">
@@ -39,7 +38,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                            <color key="backgroundColor" red="0.8760512319" green="0.78040022090000005" blue="0.55938115820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95503038169999999" green="0.85043603180000005" blue="0.61049604420000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
@@ -54,12 +53,11 @@
                         <color key="backgroundColor" red="0.87275840784603487" green="0.87605123192372947" blue="0.71958548197628536" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="b25-dp-3Yg">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Заметки" largeTitleDisplayMode="always" id="b25-dp-3Yg">
                         <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="7FA-qA-AXj">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="addButton:" destination="BYZ-38-t0r" id="SsL-8V-Mr6"/>
+                                <action selector="navigate:" destination="BYZ-38-t0r" id="wVN-jX-Of3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -80,6 +78,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UM4-1x-8V5">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -90,14 +93,60 @@
             </objects>
             <point key="canvasLocation" x="66.666666666666671" y="-28.125"/>
         </scene>
+        <!--Entry View Controller-->
+        <scene sceneID="ScR-Mw-SWe">
+            <objects>
+                <viewController storyboardIdentifier="Entry" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gzQ-AR-JaF" customClass="EntryViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4eZ-WW-8gz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUp-sP-x4C">
+                                <rect key="frame" x="10" y="58" width="394" height="52"/>
+                                <color key="backgroundColor" red="0.8760512319" green="0.78040022090000005" blue="0.55938115820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="6ZD-hJ-w2y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KWe-Io-x6W">
+                                <rect key="frame" x="10" y="120" width="394" height="323"/>
+                                <color key="backgroundColor" red="0.8760512319" green="0.78040022090000005" blue="0.55938115820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tcC-8V-vER"/>
+                        <color key="backgroundColor" red="0.95427695530000001" green="0.85008492609999997" blue="0.60933028700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KWe-Io-x6W" firstAttribute="leading" secondItem="jUp-sP-x4C" secondAttribute="leading" id="2Zh-qz-fNh"/>
+                            <constraint firstItem="jUp-sP-x4C" firstAttribute="top" secondItem="tcC-8V-vER" secondAttribute="top" constant="10" id="7j5-9J-SMF"/>
+                            <constraint firstItem="KWe-Io-x6W" firstAttribute="bottom" secondItem="tcC-8V-vER" secondAttribute="bottom" constant="10" id="Shj-y4-xxP"/>
+                            <constraint firstItem="jUp-sP-x4C" firstAttribute="leading" secondItem="tcC-8V-vER" secondAttribute="leading" constant="10" id="eRK-4S-jvA"/>
+                            <constraint firstItem="tcC-8V-vER" firstAttribute="trailing" secondItem="jUp-sP-x4C" secondAttribute="trailing" constant="10" id="fey-XB-UCK"/>
+                            <constraint firstItem="KWe-Io-x6W" firstAttribute="top" secondItem="jUp-sP-x4C" secondAttribute="bottom" constant="10" id="pNK-TZ-fvG"/>
+                            <constraint firstItem="KWe-Io-x6W" firstAttribute="trailing" secondItem="jUp-sP-x4C" secondAttribute="trailing" id="uux-dq-cpx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noteField" destination="KWe-Io-x6W" id="HGo-GH-Lks"/>
+                        <outlet property="titleField" destination="jUp-sP-x4C" id="6St-W5-8pt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jYV-PB-94V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750.7246376811595" y="-28.125"/>
+        </scene>
     </scenes>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="113"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
