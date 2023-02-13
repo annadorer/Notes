@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9505D5EB299A75E800C767A2 /* NoteDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9505D5EA299A75E800C767A2 /* NoteDAL.swift */; };
 		9571111329992B8200908CB3 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571111229992B8200908CB3 /* EntryViewController.swift */; };
 		95C6F1C8299781E1001E4142 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6F1C7299781E1001E4142 /* AppDelegate.swift */; };
 		95C6F1CA299781E1001E4142 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6F1C9299781E1001E4142 /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9505D5EA299A75E800C767A2 /* NoteDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDAL.swift; sourceTree = "<group>"; };
 		9571111229992B8200908CB3 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		95C6F1C4299781E1001E4142 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C6F1C7299781E1001E4142 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				95C6F1D2299781E3001E4142 /* LaunchScreen.storyboard */,
 				95C6F1CD299781E1001E4142 /* Main.storyboard */,
 				95C6F1D0299781E3001E4142 /* Assets.xcassets */,
+				9505D5EA299A75E800C767A2 /* NoteDAL.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				95C6F1CC299781E1001E4142 /* ViewController.swift in Sources */,
 				95C6F1C8299781E1001E4142 /* AppDelegate.swift in Sources */,
 				95C6F1CA299781E1001E4142 /* SceneDelegate.swift in Sources */,
+				9505D5EB299A75E800C767A2 /* NoteDAL.swift in Sources */,
 				95C6F1DD299783D4001E4142 /* Note.swift in Sources */,
 				9571111329992B8200908CB3 /* EntryViewController.swift in Sources */,
 			);
