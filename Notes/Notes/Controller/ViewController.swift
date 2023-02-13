@@ -7,7 +7,7 @@
 
 import UIKit
 
-var text: [Note] {
+var notes: [Note] {
     set {
         if let encoded = try? JSONEncoder().encode(newValue) {
             UserDefaults.standard.set(encoded, forKey: "DataKe")
@@ -29,45 +29,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func navigate(_ sender: Any) {
         guard let vc = storyboard?.instantiateViewController(identifier: "Entry") as? EntryViewController else {
                     return
-        
-               }
-               vc.title = "Заметки"
-                navigationController?.pushViewController(vc, animated: true)
+        }
+        vc.title = "Заметки"
+        vc.completion = { title, text in
+            
+            self.addNote(titleNote: title, nameNote: text)
+            self.tableView.reloadData()
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
-    //    @IBOutlet weak var navigate: UIBarButtonItem!
-//
-//    @IBAction func addButton(_ sender: Any) {
-//        guard let vc = storyboard?.instantiateViewController(identifier: "Entry") as? EntryViewController else {
-//            return
-//
-//        }
-//        vc.title = "Заметки"
-//        navigationController?.pushViewController(vc, animated: true)
-//
-////        addNote(titleNote: "ewe", nameNote: "New Note")
-////        tableView.reloadData()
-//    }
     
     @IBOutlet weak var tableView: UITableView!
     
     //Table
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return text.count
+        return notes.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIndentifier", for: indexPath)
-        cell.textLabel?.text = text[indexPath.row].text
-        cell.detailTextLabel?.text = text[indexPath.row].title
+        cell.textLabel?.text = notes[indexPath.row].text
+        cell.detailTextLabel?.text = notes[indexPath.row].title
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -84,17 +73,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     func addNote(titleNote: String, nameNote: String) {
-        text.append(Note(title: titleNote, text: nameNote, noteID: counterID))
+        notes.append(Note(title: titleNote, text: nameNote, noteID: counterID))
         counterID+=1
     }
     
     func removeNote(at index: Int) {
-        text.remove(at: index)
+        notes.remove(at: index)
     }
 }
 

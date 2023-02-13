@@ -9,6 +9,8 @@ import UIKit
 
 class EntryViewController: UIViewController {
     
+    var counterID: Int = 3
+    
     @IBOutlet var titleField: UITextField!
     @IBOutlet var noteField: UITextView!
     
@@ -22,6 +24,8 @@ class EntryViewController: UIViewController {
     @objc func saveButton() {
         if let text = titleField.text, !text.isEmpty, !noteField.text.isEmpty {
             completion?(text, noteField.text)
+            //notes.append(Note(title: titleField.text!, text: noteField.text, noteID: counterID))
+            //counterID+=1
         }
     }
 }
