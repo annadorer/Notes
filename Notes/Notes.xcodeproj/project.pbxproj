@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9505D5EB299A75E800C767A2 /* NoteDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9505D5EA299A75E800C767A2 /* NoteDAL.swift */; };
-		9571111329992B8200908CB3 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571111229992B8200908CB3 /* EntryViewController.swift */; };
+		9505D5EB299A75E800C767A2 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9505D5EA299A75E800C767A2 /* NoteService.swift */; };
+		9571111329992B8200908CB3 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571111229992B8200908CB3 /* NoteViewController.swift */; };
 		95C6F1C8299781E1001E4142 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6F1C7299781E1001E4142 /* AppDelegate.swift */; };
 		95C6F1CA299781E1001E4142 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6F1C9299781E1001E4142 /* SceneDelegate.swift */; };
-		95C6F1CC299781E1001E4142 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6F1CB299781E1001E4142 /* ViewController.swift */; };
+		95C6F1CC299781E1001E4142 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6F1CB299781E1001E4142 /* NotesViewController.swift */; };
 		95C6F1CF299781E1001E4142 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C6F1CD299781E1001E4142 /* Main.storyboard */; };
 		95C6F1D1299781E3001E4142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C6F1D0299781E3001E4142 /* Assets.xcassets */; };
 		95C6F1D4299781E3001E4142 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C6F1D2299781E3001E4142 /* LaunchScreen.storyboard */; };
@@ -19,12 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9505D5EA299A75E800C767A2 /* NoteDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDAL.swift; sourceTree = "<group>"; };
-		9571111229992B8200908CB3 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		9505D5EA299A75E800C767A2 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
+		9571111229992B8200908CB3 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		95C6F1C4299781E1001E4142 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C6F1C7299781E1001E4142 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C6F1C9299781E1001E4142 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		95C6F1CB299781E1001E4142 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		95C6F1CB299781E1001E4142 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		95C6F1CE299781E1001E4142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95C6F1D0299781E3001E4142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95C6F1D3299781E3001E4142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		954AC279299CC5EC00F98EA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95C6F1D2299781E3001E4142 /* LaunchScreen.storyboard */,
+				95C6F1CD299781E1001E4142 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		95C6F1BB299781E1001E4142 = {
 			isa = PBXGroup;
 			children = (
@@ -61,13 +70,12 @@
 		95C6F1C6299781E1001E4142 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				954AC279299CC5EC00F98EA9 /* View */,
 				95C6F1DF29979A8F001E4142 /* Delegate */,
 				95C6F1DE29978846001E4142 /* Controller */,
 				95C6F1DB299783AC001E4142 /* Model */,
-				95C6F1D2299781E3001E4142 /* LaunchScreen.storyboard */,
-				95C6F1CD299781E1001E4142 /* Main.storyboard */,
 				95C6F1D0299781E3001E4142 /* Assets.xcassets */,
-				9505D5EA299A75E800C767A2 /* NoteDAL.swift */,
+				9505D5EA299A75E800C767A2 /* NoteService.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -83,8 +91,8 @@
 		95C6F1DE29978846001E4142 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9571111229992B8200908CB3 /* EntryViewController.swift */,
-				95C6F1CB299781E1001E4142 /* ViewController.swift */,
+				9571111229992B8200908CB3 /* NoteViewController.swift */,
+				95C6F1CB299781E1001E4142 /* NotesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,12 +177,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C6F1CC299781E1001E4142 /* ViewController.swift in Sources */,
+				95C6F1CC299781E1001E4142 /* NotesViewController.swift in Sources */,
 				95C6F1C8299781E1001E4142 /* AppDelegate.swift in Sources */,
 				95C6F1CA299781E1001E4142 /* SceneDelegate.swift in Sources */,
-				9505D5EB299A75E800C767A2 /* NoteDAL.swift in Sources */,
+				9505D5EB299A75E800C767A2 /* NoteService.swift in Sources */,
 				95C6F1DD299783D4001E4142 /* Note.swift in Sources */,
-				9571111329992B8200908CB3 /* EntryViewController.swift in Sources */,
+				9571111329992B8200908CB3 /* NoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,7 @@
 import Foundation
 
 struct Note: Codable {
-    var title: String
-    var text: String
-    var noteID: Int
-}
-
-struct NoteArray: Codable {
-    var notes: [Note] = Array()
+    let title: String
+    let text: String
+    var id = UUID().uuidString
 }

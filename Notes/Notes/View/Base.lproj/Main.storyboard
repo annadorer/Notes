@@ -11,7 +11,7 @@
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" id="BYZ-38-t0r" customClass="NotesViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,6 +22,7 @@
                                 <color key="backgroundColor" red="0.95503038169999999" green="0.85043603180000005" blue="0.61049604420000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" red="0.95503038169999999" green="0.85043603180000005" blue="0.61049604420000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIndentifier" textLabel="bcf-i6-54Y" detailTextLabel="gu6-x6-QOO" style="IBUITableViewCellStyleSubtitle" id="y2B-if-Ha3">
                                         <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
@@ -64,7 +65,7 @@
                         <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="7FA-qA-AXj">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="navigate:" destination="BYZ-38-t0r" id="wVN-jX-Of3"/>
+                                <action selector="createNote" destination="BYZ-38-t0r" id="Lfg-uE-jTj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -100,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="66.666666666666671" y="-28.125"/>
         </scene>
-        <!--Entry View Controller-->
+        <!--Note View Controller-->
         <scene sceneID="ScR-Mw-SWe">
             <objects>
-                <viewController storyboardIdentifier="Entry" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gzQ-AR-JaF" customClass="EntryViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gzQ-AR-JaF" customClass="NoteViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4eZ-WW-8gz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,8 +119,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KWe-Io-x6W">
-                                <rect key="frame" x="10" y="120" width="394" height="323"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KWe-Io-x6W">
+                                <rect key="frame" x="10" y="120" width="394" height="728"/>
                                 <color key="backgroundColor" red="0.8760512319" green="0.78040022090000005" blue="0.55938115820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -131,13 +132,13 @@
                         <color key="backgroundColor" red="0.95427695530000001" green="0.85008492609999997" blue="0.60933028700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KWe-Io-x6W" firstAttribute="leading" secondItem="jUp-sP-x4C" secondAttribute="leading" id="2Zh-qz-fNh"/>
+                            <constraint firstItem="KWe-Io-x6W" firstAttribute="top" secondItem="jUp-sP-x4C" secondAttribute="bottom" constant="10" id="3qc-aO-neD"/>
                             <constraint firstItem="jUp-sP-x4C" firstAttribute="top" secondItem="tcC-8V-vER" secondAttribute="top" constant="10" id="7j5-9J-SMF"/>
-                            <constraint firstItem="KWe-Io-x6W" firstAttribute="bottom" secondItem="tcC-8V-vER" secondAttribute="bottom" constant="10" id="Shj-y4-xxP"/>
+                            <constraint firstItem="KWe-Io-x6W" firstAttribute="leading" secondItem="jUp-sP-x4C" secondAttribute="leading" id="EZt-YD-61l"/>
+                            <constraint firstItem="KWe-Io-x6W" firstAttribute="trailing" secondItem="jUp-sP-x4C" secondAttribute="trailing" id="Mlx-l1-hWY"/>
+                            <constraint firstItem="KWe-Io-x6W" firstAttribute="bottom" secondItem="tcC-8V-vER" secondAttribute="bottom" constant="-14" id="QYc-gY-Hcj"/>
                             <constraint firstItem="jUp-sP-x4C" firstAttribute="leading" secondItem="tcC-8V-vER" secondAttribute="leading" constant="10" id="eRK-4S-jvA"/>
                             <constraint firstItem="tcC-8V-vER" firstAttribute="trailing" secondItem="jUp-sP-x4C" secondAttribute="trailing" constant="10" id="fey-XB-UCK"/>
-                            <constraint firstItem="KWe-Io-x6W" firstAttribute="top" secondItem="jUp-sP-x4C" secondAttribute="bottom" constant="10" id="pNK-TZ-fvG"/>
-                            <constraint firstItem="KWe-Io-x6W" firstAttribute="trailing" secondItem="jUp-sP-x4C" secondAttribute="trailing" id="uux-dq-cpx"/>
                         </constraints>
                     </view>
                     <connections>
